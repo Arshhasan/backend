@@ -11,7 +11,7 @@ const createEntry = async (yourName, crushName, creatorId) => {
 
 const getEntriesByCreatorId = async (creatorId) => {
   const result = await pool.query(
-    'SELECT * FROM crush_entries WHERE creator_id = $1 ORDER BY submitted_at DESC',
+    'SELECT * FROM entries WHERE creator_id = $1 ORDER BY created_at DESC',
     [creatorId]
   );
   return result.rows;
