@@ -10,6 +10,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(cors());
+app.options('*', cors());
 app.use(express.json());
 console.log('entryRoutes is:', typeof entryRoutes);
 console.log('creatorRoutes is:', typeof creatorRoutes);
